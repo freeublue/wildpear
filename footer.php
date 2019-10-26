@@ -1,10 +1,14 @@
 <div class='row text-center'>
-<div class='col-4 infobox2'><p>Facilities</p>
-
-Individually furnished apartments, with incredible views over Johannesburg South</br>Enjoy spectacular sunsets over the koppies with a glass of wine.</br>Wile away the hours in our sumptious, rustic styled spaces, where your every comfort is our dedication.
-
-
 <?
+$ftsid = 1;
+$sqft = mysqli_query($conn, "SELECT * FROM fts WHERE ft_id = '$ftsid'");
+while($rr = mysqli_fetch_array($sqft)) { 
+echo "<div class='col-4 infobox2'><p>$rr[ft_title]</p><p>
+
+$rr[ft_txt]</p>"; } 
+
+
+
 
 
 
