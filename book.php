@@ -2,7 +2,7 @@
 require "top.php";
 $titlepage = 'Wildpear Book Affordable Accommodation Contact';
 require "header.php";
-
+require "config.php";
 
 ?>
 
