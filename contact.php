@@ -5,6 +5,9 @@ require "header.php";
 
 
 ?>
+<style>
+#map{height:500px;}
+</style>
 
 <div class='container-fluid'>
 <div class='row text-center'>
@@ -55,8 +58,13 @@ require "Robochhr.php";
 </form>
 
 </div>
+<div class='col-6'><div id='map'></div>
 </div>
+</div>
+
   <?
+  $lat = '-26.275720';
+  $lng = '28.061870';
 require "footer.php";
 ?>         
 </div><!container>
@@ -68,9 +76,7 @@ require "bootstrapbottom.php";
 <script>
 new WOW().init();
 </script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
-
-<script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script><script>
 
 var mail;
 var nam;
@@ -82,8 +88,7 @@ var mail = document.mailform.mail.value;
 var url = "addmail.php?nam="+nam+"&&mail="+mail;
 $('#resultsx').load(url);
 } 
-</script>
-<script>
+</script><script>
 
 var pval;
 
@@ -94,4 +99,27 @@ $(".submenu").show();
 var url = "submenu.php?me="+pval;
 $('.submenu').load(url);
 } 
-</script>
+</script><script>
+    var lat = "<? echo $lat; ?>";
+    var lng = "<? echo $lng; ?>";
+    latx = parseInt(lat);
+    lngx = parseInt(lng);
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  
+  var uluru = {lat: latx, lng: lngx};
+  
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 10, center: uluru});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8iLOdr3AXEf8PcwCbnSUq48e0jrEMbKc&callback=initMap"></script>
