@@ -10,19 +10,28 @@ require "header.php";
 <div class='row text-center'>
 <div class='col-12'>
       
-<? $caroarray = array("ducks.jpg" , "breeze.jpg" , "herb.jpg");
+<? include "config.php";
+$caroarray = array("fview.jpg" , "breeze.jpg" , "herb.jpg");
 $one = "<h2><a style='color:white;' href='register.php'>Book Now</a></h2>";
 $two = "<h2><a style='color:white;' href='register.php'>Find Out More</a></h2>";
 $three = "<h2><a style='color:white;' href='register.php'>Seasonal Specials</a></h2>";
 
   $carohtml = array($one , $two , $three);
 caro($caroarray, $carohtml);
-?>
-</div></div>
+
+$pagex = basename($_SERVER[PHP_SELF]);
+$page = str_replace('.php', '', $pagex);
+$sqx = mysqli_query($conn, "SELECT * FROM pgs WHERE pg_pagename = '$page'");
+while($rowx = mysqli_fetch_array($sqx)) { 
+$headingx[] = $rowx[pg_title];
+$subheadingx[] = $rowx[pg_subhead];
+$txtx[] = $rowx[pg_txt]; } 
+
+
+echo "</div></div>
 <div style='margin-top:2em;' class='row text-center'>
-<div class='col-12'><h2>Effortless enjoyment. Absolute ease</h2><p class='text-center' style='color:gold;'>_________________________</p>
-<p style='color:silver;margin-top:2em;' class='wow fadeInDown'>Lorem ipsum dolor sit amet, pellentesque malesuada in, non vivamus, quam diam consequat. Id duis, sit ac vitae, consectetuer et nulla. Et egestas wisi, arcu in, diam nulla eget. Diam imperdiet. Nulla mollis, dapibus lectus in. Eu magna, massa magna, elementum pharetra.<br>
-Commodo erat, aliquet luctus donec. Curabitur libero, pharetra sem aenean. Tortor rutrum, vel ultricies non. Odio magna, diam fermentum. Integer sed magna, pellentesque aenean vestibulum, quis purus.</p>
+<div class='col-12'><h2>$headingx[0]</h2><p class='text-center' style='color:gold;'>_________________________</p>
+<p style='color:silver;margin-top:2em;' class='wow fadeInDown'>$txtx[0]</p>
 </div></div>
 
 
@@ -37,22 +46,20 @@ Commodo erat, aliquet luctus donec. Curabitur libero, pharetra sem aenean. Torto
 
 
 <div class='row text-center'>
-<div class='col-4'><h4 style='margin-top:2em;'>Secure</h2><p class='text-center' style='color:gold;'>_________________________</p>
-<p style='color:silver;' class='wow fadeInDown'>Lorem ipsum dolor sit amet, pellentesque malesuada in, non vivamus, quam diam consequat. Id duis, sit ac vitae, consectetuer et nulla. Et egestas wisi, arcu in, diam nulla eget. Diam imperdiet. Nulla mollis, dapibus lectus in. Eu magna, massa magna, elementum pharetra.<br>
-Commodo erat, aliquet luctus donec. Curabitur libero, pharetra sem aenean. Tortor rutrum, vel ultricies non. Odio magna, diam fermentum. Integer sed magna, pellentesque aenean vestibulum, quis purus.</p>
+<div class='col-4'><h4 style='margin-top:2em;'>$headingx[1]</h2><p class='text-center' style='color:gold;'>_________________________</p>
+<p style='color:silver;' class='wow fadeInDown'>$txtx[1]</p>
 </div>
 
-<div class='col-4'><h4 style='margin-top:2em;'>Affordable</h2><p class='text-center' style='color:gold;'>_________________________</p>
-<p style='color:silver;' class='wow fadeInDown'>Lorem ipsum dolor sit amet, pellentesque malesuada in, non vivamus, quam diam consequat. Id duis, sit ac vitae, consectetuer et nulla. Et egestas wisi, arcu in, diam nulla eget. Diam imperdiet. Nulla mollis, dapibus lectus in. Eu magna, massa magna, elementum pharetra.<br>
-Commodo erat, aliquet luctus donec. Curabitur libero, pharetra sem aenean. Tortor rutrum, vel ultricies non. Odio magna, diam fermentum. Integer sed magna, pellentesque aenean vestibulum, quis purus.</p>
+<div class='col-4'><h4 style='margin-top:2em;'>$headingx[2]</h2><p class='text-center' style='color:gold;'>_________________________</p>
+<p style='color:silver;' class='wow fadeInDown'>$txtx[2]</p>
 </div>
-<div class='col-4'><h4 style='margin-top:2em;'>Convienient</h2><p class='text-center' style='color:gold;'>_________________________</p>
-<p style='color:silver;' class='wow fadeInDown'>Lorem ipsum dolor sit amet, pellentesque malesuada in, non vivamus, quam diam consequat. Id duis, sit ac vitae, consectetuer et nulla. Et egestas wisi, arcu in, diam nulla eget. Diam imperdiet. Nulla mollis, dapibus lectus in. Eu magna, massa magna, elementum pharetra.<br>
-Commodo erat, aliquet luctus donec. Curabitur libero, pharetra sem aenean. Tortor rutrum, vel ultricies non. Odio magna, diam fermentum. Integer sed magna, pellentesque aenean vestibulum, quis purus.</p>
+<div class='col-4'><h4 style='margin-top:2em;'>$headingx[3]</h2><p class='text-center' style='color:gold;'>_________________________</p>
+<p style='color:silver;' class='wow fadeInDown'>$txtx[3]</p>
 </div>
-</div>
+</div>";
+?>
 <?
-include "config.php";
+
 $sq = mysqli_query($conn, "SELECT * FROM accommodation1");
 while ($ro = mysqli_fetch_array($sq)) { 
 $id[] = $ro['id'];
