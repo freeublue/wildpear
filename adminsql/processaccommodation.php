@@ -14,4 +14,5 @@ facilities) values('$title',
 '$descp', '$price',
 '$sup',
 '$facilities')");
+echo "<a href='index.php'>Data Added Go Back to Home</a>";
 ?>

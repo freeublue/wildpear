@@ -12,4 +12,5 @@ $sq = mysqli_query($conn, "UPDATE accommodation1 SET title = '$title',
 descp = '$descp', price = '$price',
 singleSupp = '$sup',
 facilities = '$facilities', numberpers = '$numberpers' WHERE id = '$id'");
+echo "<a href='index.php'>Data Added Go Back to Home</a>";
 ?>

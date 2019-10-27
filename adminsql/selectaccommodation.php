@@ -13,5 +13,5 @@ echo "$row[img1] 1 <br>$row[img2] 2 <br>$row[img3] 3 <br>";
 echo "</div></div>";
 
 } 
-
+echo "<a href='index.php'>Data Added Go Back to Home</a>";
 ?>

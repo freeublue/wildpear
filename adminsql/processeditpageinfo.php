@@ -8,4 +8,5 @@ $pagename = mysqli_real_escape_string($conn, $_POST['pagename']);
 echo "title $title subhead $subhead txt $txt id $id $pagename";
 
 $sq = mysqli_query($conn, "UPDATE pgs SET pg_title = '$title', pg_subhead = '$subhead', pg_txt = '$txt' WHERE pg_id= '$id'");
+echo "<a href='index.php'>Data Added Go Back to Home</a>";
 ?>
