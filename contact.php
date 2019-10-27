@@ -2,6 +2,7 @@
 require "top.php";
 $titlepage = 'Wildpear Book Affordable Accommodation Contact';
 require "header.php";
+require "config.php";
 
 
 ?>
@@ -63,8 +64,11 @@ require "Robochhr.php";
 </div>
 
   <?
-  $lat = '-26.275720';
-  $lng = '28.061870';
+  $sq = mysqli_query($conn, "SELECT * FROM maptb");
+while($row = mysqli_fetch_array($sq)) { 
+  $lat = $row[mp_lat];
+  $lng = $row[mp_lng];
+  $GK = $row[mp_image]; } 
 require "footer.php";
 ?>         
 </div><!container>
@@ -102,16 +106,16 @@ $('.submenu').load(url);
 </script><script>
     var lat = "<? echo $lat; ?>";
     var lng = "<? echo $lng; ?>";
-    latx = parseInt(lat);
-    lngx = parseInt(lng);
+    latx = parseFloat(lat);
+    lngx = parseFloat(lng);
 // Initialize and add the map
 function initMap() {
-  // The location of Uluru
+  
   
   var uluru = {lat: latx, lng: lngx};
   
   var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 10, center: uluru});
+      document.getElementById('map'), {zoom: 12, center: uluru});
   // The marker, positioned at Uluru
   var marker = new google.maps.Marker({position: uluru, map: map});
 }
@@ -121,5 +125,6 @@ function initMap() {
     * The key parameter will contain your own API key (which is not needed for this tutorial)
     * The callback parameter executes the initMap() function
     -->
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=Kc&callback=initMap"></script>
+    <?
+    echo "<script async defer
+    src='https://maps.googleapis.com/maps/api/js?key=" . $GK . "&callback=initMap'></script>";

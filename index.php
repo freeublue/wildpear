@@ -11,7 +11,7 @@ require "header.php";
 <div class='col-12'>
       
 <? include "config.php";
-$caroarray = array("fview.jpg" , "breeze.jpg" , "herb.jpg");
+$caroarray = array("fview.jpg" , "breeze.jpg" , "fview2.jpg");
 $one = "<h2><a style='color:white;' href='register.php'>Book Now</a></h2>";
 $two = "<h2><a style='color:white;' href='register.php'>Find Out More</a></h2>";
 $three = "<h2><a style='color:white;' href='register.php'>Seasonal Specials</a></h2>";
