@@ -25,6 +25,7 @@ while($row = mysqli_fetch_array($sq)) {
                      Go! 
                   </button>";
 echo "</form>"; } 
+echo "<a href='index.php'>Data Added Go Back to Home</a>";
 ?>
 </div></div>
 <div class='row'>

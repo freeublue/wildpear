@@ -33,7 +33,7 @@ $sq = mysqli_query($conn, "SELECT * FROM pgs WHERE pg_pageid = '$id'");
 while($row = mysqli_fetch_array($sq)) { 
 echo "<a href='editpageinfo.php?id=$row[pg_id]'>$row[pg_title]</a><br>";
 } 
-
+echo "<a href='index.php'>Data Added Go Back to Home</a>";
 ?>
 </div></div>
 </div></body></html>

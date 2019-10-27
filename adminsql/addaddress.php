@@ -13,6 +13,7 @@ require "bootstraptop.php";
 <label>State</label><br><input type='text' name='mp_state' value='' placeholder ='State' /><br>
 <label>Country</label><br><input type='text' name='mp_country' value='' placeholder ='Country' /><br>
 <label>Zip</label><br><input type='text' name='mp_zip' value='' placeholder ='Zip' /><br>
-<label>Mobile</label><br><input type='text' name='mp_mobile' value='' placeholder ='Zip' /><br>
-<label>Email</label><br><input type='text' name='mp_email' value='' placeholder ='Zip' /><br>
+<label>Mobile</label><br><input type='text' name='mp_mobile' value='' placeholder ='mobile' /><br>
+<label>Email</label><br><input type='text' name='mp_email' value='' placeholder ='Email' /><br>
+<label>GK</label><br><input type='text' name='GK' value='' placeholder ='GK' /><br>
 <input type='submit' name='submit' value='submit' /></form></div></div></div>
