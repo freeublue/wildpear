@@ -10,11 +10,12 @@ require "header.php";
 <div class='row text-center'>
 <div class='col-12'>
       
-<? $caroarray = array("ducks.jpg" , "breeze.jpg" , "herb.jpg");
-$one = "<h2><a style='color:white;' href='register.php'>Book Now</a></h2>";
-$two = "<h2><a style='color:white;' href='register.php'>Find Out More</a></h2>";
-$three = "<h2><a style='color:white;' href='register.php'>Seasonal Specials</a></h2>";
+<? 
 
+$caroarray = array("fview.jpg" , "breeze.jpg" , "fview2.jpg");
+$one = "<h2><a style='color:white;' href='book.php'>Book Now</a></h2>";
+$two = "<h2><a style='color:white;' href='accommodation.php'>Find Out More</a></h2>";
+$three = "<h2><a style='color:white;' href='pricing.php'>Seasonal Specials</a></h2>";
   $carohtml = array($one , $two , $three);
 caro($caroarray, $carohtml);
 ?>
