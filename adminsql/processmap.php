@@ -1,5 +1,6 @@
-
 <?
+require "bootstraptop.php";
+if(isset($_SESSION[customer]) ) { 
 require "../config.php";
 $mp_name = mysqli_real_escape_string($conn, $_POST['mp_name']);
 $mp_lat = $_POST['mp_lat'];
@@ -19,3 +20,8 @@ $sq = mysqli_query($conn, "INSERT INTO maptb(mp_name, mp_lat, mp_lng, mp_street,
 echo "<a href='index.php'>Data Added Go Back to Home</a>";
 ?>
 
+<?
+  } else { 
+  echo "<a href='login.php'>Login</a>";
+  } 
+?>

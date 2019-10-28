@@ -1,5 +1,6 @@
 <?
 require "bootstraptop.php";
+if(isset($_SESSION[customer]) ) { 
 require "../config.php";
 $id = $_REQUEST['id'];
 $sq = mysqli_query($conn, "SELECT * FROM pgs WHERE pg_id = '$id'");
@@ -38,6 +39,12 @@ echo "<input type='text' name='pagename' value='$pagename' /><br>";
                   </button>";
 echo "</form>";
 ?>
+<?
+  } else { 
+  echo "<a href='login.php'>Login</a>";
+  } 
+  ?>
+
 </div></div>
 
 

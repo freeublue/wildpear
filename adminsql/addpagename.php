@@ -1,5 +1,7 @@
 <?
-require "../bootstraptop.php";
+require "bootstraptop.php";
+
+if(isset($_SESSION[customer]) ) { 
 ?>
 
 <div class='container'>
@@ -27,6 +29,12 @@ while($row = mysqli_fetch_array($sq)) {
 echo "<a href='addpageinfo.php?id=$row[pa_id]&&pagename=$row[pa_title]'>$row[pa_title]</a><br>";
 } 
 echo "<a href='index.php'>Data Added Go Back to Home</a>";
+?>
+<?
+  } else { 
+  echo "<a href='login.php'>Login</a>";
+  } 
+  ?>
 ?>
 </div></div>
 </div></body></html>

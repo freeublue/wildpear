@@ -1,5 +1,6 @@
 <?
 require "../bootstraptop.php";
+if(isset($_SESSION[customer]) ) { 
 ?>
 <div class='row'>
 <div class='col-6 text-center'><h2>Add Accommodation</h2>
@@ -45,4 +46,8 @@ require "../bootstraptop.php";
   </form>
   </div>
   </div>
+  <?
+  } else { 
+  echo "<a href='login.php'>Login</a>";
+  } 
 ?>

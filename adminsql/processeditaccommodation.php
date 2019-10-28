@@ -1,5 +1,6 @@
 <?
-require "../bootstraptop.php";
+require "bootstraptop.php";
+if(isset($_SESSION[customer]) ) { 
 require "../config.php";
 $title = mysqli_real_escape_string($conn, $_POST['title']);
 $price = mysqli_real_escape_string($conn, $_POST['price']);
@@ -12,5 +13,11 @@ $sq = mysqli_query($conn, "UPDATE accommodation1 SET title = '$title',
 descp = '$descp', price = '$price',
 singleSupp = '$sup',
 facilities = '$facilities', numberpers = '$numberpers' WHERE id = '$id'");
-echo "<a href='index.php'>Data Added Go Back to Home</a>";
+echo "<a href='index.php'>Data Added Go Back to Home</a>"; } else { 
+echo 'login'; } 
+?>
+<?
+  } else { 
+  echo "<a href='login.php'>Login</a>";
+  } 
 ?>

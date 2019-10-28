@@ -1,5 +1,6 @@
 <?
-require "../bootstraptop.php";
+require "bootstraptop.php";
+if(isset($_SESSION[customer]) ) { 
 require "../config.php";
 $title = mysqli_real_esacpe_string($conn, $_POST['title']);
 $price = mysqli_real_esacpe_string($conn, $_POST['price']);
@@ -15,4 +16,10 @@ facilities) values('$title',
 '$sup',
 '$facilities')");
 echo "<a href='index.php'>Data Added Go Back to Home</a>";
+?>
+
+<?
+  } else { 
+  echo "<a href='login.php'>Login</a>";
+  } 
 ?>

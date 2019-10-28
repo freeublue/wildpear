@@ -1,5 +1,6 @@
 <?
 require "bootstraptop.php";
+if(isset($_SESSION[customer]) ) { 
 ?>
 
 <div class='container'>
@@ -32,8 +33,12 @@ echo "<a href='index.php'>Data Added Go Back to Home</a>";
 <div class='col-12'>
 <?
 
+  } else { 
+  echo "<a href='login.php'>Login</a>";
+  } 
+  ?>
 
-?>
+
 </div></div>
 </div></body></html>
 

@@ -1,4 +1,7 @@
 <?
+require "bootstraptop.php";
+
+if(isset($_SESSION[customer]) ) { 
 require "../config.php";
 $sq = mysqli_query($conn, "SELECT * FROM accommodation1");
 while($row = mysqli_fetch_array($sq)) { 
@@ -15,5 +18,10 @@ echo "<hr>";
 echo "</div></div>";
 
 } 
-
+?>
+<?
+  } else { 
+  echo "<a href='login.php'>Login</a>";
+  } 
+  ?>
 ?>

@@ -1,5 +1,6 @@
 <?
 require "bootstraptop.php";
+if(isset($_SESSION[customer]) ) { 
 ?>
 <div class='container'><div class='row'><div class='col-12'><h2>Add Details</h2>
 <form name='' id='' action='processmap.php' method='post' onsubmit=''>
@@ -17,3 +18,8 @@ require "bootstraptop.php";
 <label>Email</label><br><input type='text' name='mp_email' value='' placeholder ='Email' /><br>
 <label>GK</label><br><input type='text' name='GK' value='' placeholder ='GK' /><br>
 <input type='submit' name='submit' value='submit' /></form></div></div></div>
+<?
+  } else { 
+  echo "<a href='login.php'>Login</a>";
+  } 
+  ?>

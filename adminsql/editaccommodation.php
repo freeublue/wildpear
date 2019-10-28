@@ -1,5 +1,7 @@
 <?
 require "bootstraptop.php";
+
+if(isset($_SESSION[customer]) ) { 
 require "../config.php";
 $id = $_REQUEST[id];
 $sq = mysqli_query($conn, "SELECT * FROM accommodation1 WHERE id = '$id'");
@@ -56,5 +58,11 @@ echo "<div class='row'>
   </div>";
 
 } 
-
 ?>
+<?
+  } else { 
+  echo "<a href='login.php'>Login</a>";
+  } 
+  ?>
+
+

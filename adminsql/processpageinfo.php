@@ -1,4 +1,6 @@
 <?
+require "bootstraptop.php";
+if(isset($_SESSION[customer]) ) { 
 require "../config.php";
 $title = mysqli_real_esacpe_string($conn, $_POST['title']);
 $subhead = mysqli_real_esacpe_string($conn, $_POST['subhead']);
@@ -9,4 +11,9 @@ echo "$title $subhead $txt $id $pagename";
 
 $sq = mysqli_query($conn, "INSERT INTO pgs(pg_title, pg_subhead, pg_txt, pg_pagename, pg_pageid) VALUES('$title', '$subhead', '$txt', '$pagename', '$id')");
 echo "<a href='index.php'>Data Added Go Back to Home</a>";
+?>
+<?
+  } else { 
+  echo "<a href='login.php'>Login</a>";
+  } 
 ?>

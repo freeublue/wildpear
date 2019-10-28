@@ -1,4 +1,6 @@
 <?
+require "bootstraptop.php";
+if(isset($_SESSION[customer]) ) { 
 require "../config.php";
 $sq = mysqli_query($conn, "SELECT * FROM pgs");
 while($row = mysqli_fetch_array($sq)) { 
@@ -12,4 +14,9 @@ echo "</div></div>";
 
 } 
 echo "<a href='index.php'>Data Added Go Back to Home</a>";
+?>
+<?
+  } else { 
+  echo "<a href='login.php'>Login</a>";
+  } 
 ?>

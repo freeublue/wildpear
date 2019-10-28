@@ -1,5 +1,6 @@
 <?
 require "bootstraptop.php";
+if(isset($_SESSION[customer]) ) { 
 ?>
 
 <div class='container'>
@@ -30,6 +31,11 @@ echo "<a href='editfooter.php?id=$row[ft_id]'>$row[ft_title]</a><br>";
 } 
 
 ?>
+<?
+  } else { 
+  echo "<a href='login.php'>Login</a>";
+  } 
+  ?>
 </div></div>
 </div></body></html>
 

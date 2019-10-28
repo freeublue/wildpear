@@ -1,4 +1,6 @@
 <?
+require "bootstraptop.php";
+if(isset($_SESSION[customer]) ) { 
 require "../config.php";
 $id = $_REQUEST['id'];
 $img = $_REQUEST['img'];
@@ -21,4 +23,9 @@ echo "<form action='processimage.php' method='post'>
     
       <button style='border:1px solid gray;color:gray;' type='submit' class='btn btn-outline text-center'>Add Image</button></div>
   </form>";
+  <?
+  } else { 
+  echo "<a href='login.php'>Login</a>";
+  } 
+  ?>
 ?>

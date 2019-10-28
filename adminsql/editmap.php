@@ -1,5 +1,6 @@
 <?
 require "bootstraptop.php";
+if(isset($_SESSION[customer]) ) { 
 require "../config.php";
 
 $sq = mysqli_query($conn, "SELECT * FROM maptb");
@@ -24,3 +25,8 @@ echo "<div class='container'><div class='row'><div class='col-12'><h2>Add Detail
 <input type='submit' name='submit' value='submit' /></form></div></div></div>";
 } 
 ?>
+<?
+  } else { 
+  echo "<a href='login.php'>Login</a>";
+  } 
+  ?>
