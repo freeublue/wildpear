@@ -9,8 +9,4 @@ echo "<b>Hi </b> $row[am1]<br />";
 
 if(md5($pass) === $row[am2]) { 
 $_SESSION['customer'] = $name;
-echo "<b><a href='index.php'>Click to proceed</a><br />"; } else { 
-
-
-echo "goodness"; } 
- } 
+echo "<b><a href='index.php'>Click to proceed</a><br />"; } }
