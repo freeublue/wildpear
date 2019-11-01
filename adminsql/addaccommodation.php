@@ -1,5 +1,5 @@
 <?
-require "../bootstraptop.php";
+require "bootstraptop.php";
 if(isset($_SESSION[customer]) ) { 
 ?>
 <div class='row'>
