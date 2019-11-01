@@ -1,5 +1,5 @@
 <?php
-include "bootstraptop.php";
+session_start();
 require "../config.php";
 $name = trim($_POST[login]);
 $pass = trim($_POST[password]);
