@@ -8,5 +8,5 @@ while($row = mysqli_fetch_array($q ) )  {
 echo "<b>Hi </b> $row[am1]<br />";
 $ps = $row['am2'];
 if($ps == crypt($_POST['password'], $ps)) { 
-$_SESSION['customer'] = $name;
+$_SESSION['customer'] = $row['am1'];
 echo "<b><a href='index.php'>Click to proceed</a><br />"; } }

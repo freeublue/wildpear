@@ -1,6 +1,6 @@
 <?php require "bootstraptop.php";
 echo "$_SESSION[customer]";
-if(isset($_SESSION['customer']) ) { 
+if(($_SESSION['customer']) ) { 
 
 echo "<div class='container'><div class='row'><div class='col-12'><h2>Click below to edit website details</h2><hr>";
 echo "<a href='addaccommodation.php'>Add Accommodation</a><br>";
